@@ -12,3 +12,4 @@ pom.xml.asc
 /classes/
 /.lein-env
 /.env
+.nrepl-port

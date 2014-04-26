@@ -9,6 +9,7 @@
                  [hiccup "1.0.5"]
                  [ring-basic-authentication "1.0.1"]
                  [environ "0.2.1"]
+                 [clj-http "0.9.1"]
                  [com.cemerick/drawbridge "0.0.6"]]
   :min-lein-version "2.0.0"
   :plugins [[environ/environ.lein "0.2.1"]

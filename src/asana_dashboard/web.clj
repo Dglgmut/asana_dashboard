@@ -1,5 +1,6 @@
 (ns asana_dashboard.web
-  (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
+  (:require [asana_dashboard.views :as views]
+            [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
             [compojure.handler :refer [site]]
             [compojure.route :as route]
             [clojure.java.io :as io]
@@ -24,9 +25,7 @@
   (ANY "/repl" {:as req}
        (drawbridge req))
   (GET "/" []
-       {:status 200
-        :headers {"Content-Type" "text/plain"}
-        :body (pr-str ["Hello"])})
+       (views/home-page))
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 

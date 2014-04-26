@@ -4,6 +4,7 @@
   :license {:name "FIXME: choose"
             :url "http://example.com/FIXME"}
   :dependencies [[org.clojure/clojure "1.4.0"]
+                 [cheshire "5.3.1"]
                  [compojure "1.1.1"]
                  [ring "1.2.2"]
                  [hiccup "1.0.5"]

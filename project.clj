@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [compojure "1.1.1"]
                  [ring "1.2.2"]
+                 [hiccup "1.0.5"]
                  [ring-basic-authentication "1.0.1"]
                  [environ "0.2.1"]
                  [com.cemerick/drawbridge "0.0.6"]]

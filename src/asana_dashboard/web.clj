@@ -1,6 +1,7 @@
 (ns asana_dashboard.web
   (:require [asana_dashboard.views :as views]
-            [asana_dashboard.asana-data-import :as asana-data]
+            [asana_dashboard.asana-data-import :as asana-import]
+            [asana_dashboard.user-model :as user-model]
             [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
             [compojure.handler :refer [site]]
             [compojure.route :as route]
@@ -27,6 +28,8 @@
        (drawbridge req))
   (GET "/" []
        (views/home-page))
+  (POST "/asana-token" {params :params}
+        (user-model/save params))
   (route/resources "/")
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))

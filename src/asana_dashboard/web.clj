@@ -27,6 +27,7 @@
        (drawbridge req))
   (GET "/" []
        (views/home-page))
+  (route/resources "/")
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 

@@ -1,1 +1,1 @@
-web: lein with-profile production trampoline run -m asana_dashboard.web
+web: lein joodo server -e production -a 0.0.0.0 -p $PORT

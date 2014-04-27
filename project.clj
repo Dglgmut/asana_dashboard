@@ -1,20 +1,15 @@
-(defproject asana_dashboard "1.0.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://asana_dashboard.herokuapp.com"
-  :license {:name "FIXME: choose"
-            :url "http://example.com/FIXME"}
-  :dependencies [[org.clojure/clojure "1.4.0"]
-                 [cheshire "5.3.1"]
-                 [compojure "1.1.1"]
-                 [ring "1.2.2"]
-                 [hiccup "1.0.5"]
-                 [ring-basic-authentication "1.0.1"]
-                 [environ "0.2.1"]
-                 [clj-http "0.9.1"]
-                 [com.cemerick/drawbridge "0.0.6"]]
+(defproject asana-dashboard "0.0.1"
+  :description "A simple stand-alone webapp"
+  :dependencies [[org.clojure/clojure "1.5.1"]
+                 [joodo "1.1.2"]]
   :min-lein-version "2.0.0"
-  :plugins [[environ/environ.lein "0.2.1"]
-            [lein-ring "0.8.10"]]
-  :hooks [environ.leiningen.hooks]
-  :profiles {:production {:env {:production true}}}
-  :ring {:handler asana_dashboard.web/app})
+
+  :joodo-root-namespace asana-dashboard.root
+
+  :profiles {:dev {:dependencies [[speclj "2.6.1"]]}}
+  :test-paths ["spec/"]
+  :java-source-paths ["src/"]
+  :plugins [[speclj "2.6.1"]
+            [joodo/lein-joodo "1.1.2"]]
+
+  )

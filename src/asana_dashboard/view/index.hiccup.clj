@@ -1,14 +1,6 @@
-[:div {:style "text-align: center;"}
- [:img {:src "/images/joodo.png"}]
- [:h1 "Welcome To Joodo!"]]
+[:h1 {:class "header"} (str "Welcome to asana dashboard" (:name *view-context*))]
 
-[:h3 "Intro"]
-[:p "Joodo is a Clojure library for building web applications. The project home is "
- [:a {:href "https://github.com/slagyr/joodo"} "https://github.com/slagyr/joodo"] "."]
-
-[:h3 "License"]
-[:p "Copyright (C) 2011-2013 Micah Martin All Rights Reserved."]
-[:p "Distributed under The MIT License."]
-
-[:h3 "Meta"]
-[:p "This app was generated for asana-dashboard."]
+(form-to [:post "/"]
+  (label :asana-token "Asana Token")
+  (text-field :asana-token)
+  (submit-button :submit))

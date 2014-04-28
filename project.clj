@@ -1,6 +1,8 @@
 (defproject asana-dashboard "0.0.1"
   :description "A simple stand-alone webapp"
   :dependencies [[org.clojure/clojure "1.5.1"]
+                 [cheshire "5.3.1"]
+                 [clj-http "0.9.1"]
                  [joodo "1.1.2"]]
   :min-lein-version "2.0.0"
 

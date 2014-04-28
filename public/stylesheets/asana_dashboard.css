@@ -4,3 +4,7 @@ body {
     width: 600px;
     margin: 30px auto 0 auto;
 }
+
+.header {
+    text-align: center;
+}

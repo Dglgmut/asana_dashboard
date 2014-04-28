@@ -8,7 +8,10 @@
 
 (defroutes asana-dashboard-routes
   (GET "/" [] (render-template "index"))
-  (POST "/" {params :params} (str (:asana-token params)))
+  (POST "/" {params :params} 
+    (render-template "dashboard"
+                     :name (:name (:data (get-me (:asana-token params))))
+                     :total-tasks-points (reduce + (get-tasks-points (:asana-token params))) ))
   (not-found (render-template "not_found" :template-root "asana_dashboard/view" :ns `asana-dashboard.view.view-helpers)))
 
 (def app-handler

@@ -11,7 +11,8 @@
   (POST "/" {params :params} 
     (render-template "dashboard"
                      :name (:name (:data (get-me (:asana-token params))))
-                     :total-tasks-points (reduce + (get-tasks-points (:asana-token params))) ))
+                     :total-tasks-points (get-total-tasks-points (:asana-token params))
+                     :total-completed-tasks-points (get-total-completed-tasks-points (:asana-token params)) ))
   (not-found (render-template "not_found" :template-root "asana_dashboard/view" :ns `asana-dashboard.view.view-helpers)))
 
 (def app-handler

@@ -16,7 +16,9 @@
             [joodo/lein-joodo "1.1.2"]
             [lein-cljsbuild "1.0.3"]]
 
-  )
   :cljsbuild {
-    :builds [{
-      :source-paths ["src-cljs"]}]}
+    :builds [{:source-paths ["src-cljs"]
+              :compiler {
+                :output-to "public/javascript/asana_dashboard.js"
+                :optimizations :whitespace
+                :pretty-print true}}]})

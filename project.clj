@@ -17,3 +17,6 @@
             [lein-cljsbuild "1.0.3"]]
 
   )
+  :cljsbuild {
+    :builds [{
+      :source-paths ["src-cljs"]}]}
